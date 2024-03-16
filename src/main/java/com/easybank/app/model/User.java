@@ -21,8 +21,8 @@ public class User {
     private String nome;
     private String cpf;
     private String email;
-    private String senha;
-    private String endereco;
+    private String password;
+    private String address;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "account_id")

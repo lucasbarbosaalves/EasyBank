@@ -20,8 +20,8 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private BigInteger numeroDaConta;
-    private Double saldo;
+    private BigInteger accountNumber;
+    private Double balance;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
