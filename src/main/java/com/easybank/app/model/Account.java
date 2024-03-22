@@ -13,7 +13,7 @@ import java.math.BigInteger;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "conta")
+@Table(name = "account")
 public class Account {
 
     @Id
