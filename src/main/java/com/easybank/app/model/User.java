@@ -6,22 +6,23 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
+@Entity
+@Table(name = "users")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name = "user")
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    private String nome;
-    private String cpf;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String id;
+    private String name;
     private String email;
     private String password;
+
+    private String cpf;
     private String address;
 
     @OneToOne(cascade = CascadeType.ALL)
