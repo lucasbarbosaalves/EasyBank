@@ -1,0 +1,190 @@
+{
+	"info": {
+		"_postman_id": "036549f6-b42f-4200-95ec-117657eb709e",
+		"name": "EasyBank",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26813516",
+		"_collection_link": "https://red-firefly-936298.postman.co/workspace/Java~3f77b9e1-7e89-4d2c-94ed-903b4ae2e994/collection/26813516-036549f6-b42f-4200-95ec-117657eb709e?action=share&source=collection_link&creator=26813516"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Joao Silva\",\r\n    \"email\": \"Joao@email.com\",\r\n    \"password\": \"1234\",\r\n    \"cpf\": \"51173094806\",\r\n    \"address\": \"Rua das Flores, 123, São Paulo, SP\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcHAiLCJzdWIiOiJsdWNhc0BlbWFpbC5jb20iLCJleHAiOjE3MTU1NTkwNzB9.AzFcBVx_cvhvb5ZNdb9cJfcvZox4o1ttPqeHGsTcW8o",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"lucas@email.com\",\r\n    \"password\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deposit",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcHAiLCJzdWIiOiJsdWNhc0BlbWFpbC5jb20iLCJleHAiOjE3MTU1Njg2MDR9.SCyArBu5D8luF6ds4JkoDQ897OB4vDfnPpQxvHRrczc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "500.0\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/account/2/deposit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"account",
+						"2",
+						"deposit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transfer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcHAiLCJzdWIiOiJsdWNhc0BlbWFpbC5jb20iLCJleHAiOjE3MTU1Njc5MTJ9.XGi9Zbwl9Vinvs2HRaWIM9V5Ze8YQpaupdO0qZnCaFE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fromAccountId\": 2,\r\n    \"toAccountId\": 1,\r\n    \"amount\": 1000,\r\n    \"transactionType\": \"ted\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/transfer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"transfer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Account",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcHAiLCJzdWIiOiJKb2FvQGVtYWlsLmNvbSIsImV4cCI6MTcxNTU2OTI4N30.olxGBo6Vd7JBy8Ub79pmgetgXZocwDUnH7CWMoSX-7c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/account/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"account",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
