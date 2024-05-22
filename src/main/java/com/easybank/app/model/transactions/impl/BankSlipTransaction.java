@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 public class BankSlipTransaction implements Transaction {
 
     @Override
-    public void transfer(Account fromAccount, Account toAccount, int amount) {
+    public void transfer(Account fromAccount, Account toAccount, int amount, String Description) {
         if (fromAccount.getBalance() >= amount) {
             fromAccount.setBalance(fromAccount.getBalance() - amount);
             try {

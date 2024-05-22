@@ -26,7 +26,7 @@ public class TransferService {
         Account toAccount = accountRepository.findById(transferDTO.toAccountId())
                 .orElseThrow(() -> new RuntimeException("Conta de destino não encontrada"));
 
-        transaction.transfer(fromAccount, toAccount, transferDTO.amount());
+        transaction.transfer(fromAccount, toAccount, transferDTO.amount(), transferDTO.description());
 
         accountRepository.save(fromAccount);
         accountRepository.save(toAccount);
