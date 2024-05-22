@@ -14,7 +14,7 @@ public class BankSlipTransaction implements Transaction {
             try {
                 TimeUnit.MINUTES.sleep(10);
             } catch (InterruptedException e) {
-                throw new RuntimeException("Erro ao simular atraso no processamento do boleto.", e);
+                throw new RuntimeException("Erro no processamento do boleto.", e);
             }
             toAccount.setBalance(toAccount.getBalance() + amount);
         } else {

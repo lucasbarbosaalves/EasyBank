@@ -7,6 +7,8 @@ import com.easybank.app.model.transactions.Transaction;
 import com.easybank.app.repositories.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class TransferService {
@@ -16,6 +18,7 @@ public class TransferService {
 
     private Transaction transaction;
 
+    @Transactional(propagation = Propagation.SUPPORTS)
     public void transfer(TransferDTO transferDTO) {
         Transaction transaction = TransactionFactory.getTransaction(transferDTO.transactionType());
         Account fromAccount = accountRepository.findById(transferDTO.fromAccountId())
